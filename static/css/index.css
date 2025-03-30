@@ -1,0 +1,65 @@
+:root {
+    --primary-color: #28a745;
+    --secondary-color: #343a40;
+    --light-color: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-color);
+    padding-top: 70px;
+}
+
+.navbar {
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand img {
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+    transform: rotate(15deg);
+}
+
+.feature-card {
+    transition: transform 0.3s ease;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.btn-custom {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 25px;
+    font-weight: 600;
+}
+
+.btn-custom:hover {
+    background-color: #218838;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    color: var(--light-color);
+}
+
+.list-group-item {
+    border-left: none;
+    border-right: none;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 3rem 0;
+    }
+}

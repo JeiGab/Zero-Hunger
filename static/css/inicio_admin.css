@@ -39,77 +39,55 @@ body {
     font-weight: 500;
 }
 
-.registration-container {
-    background-color: white;
+.welcome-section {
+    background: linear-gradient(135deg, rgba(111,66,193,0.1) 0%, rgba(40,167,69,0.1) 100%);
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     padding: 3rem;
     margin: 2rem 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.registration-title {
+.welcome-title {
     color: var(--secondary-color);
     font-weight: 700;
     margin-bottom: 1.5rem;
     position: relative;
 }
 
-.registration-title:after {
+.welcome-title:after {
     content: '';
     position: absolute;
     left: 0;
     bottom: -10px;
     width: 60px;
     height: 4px;
-    background: var(--admin-accent);
+    background: var(--primary-color);
     border-radius: 2px;
 }
 
-.registration-form {
-    max-width: 500px;
-}
-
-.form-label {
-    font-weight: 500;
+.welcome-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
     color: var(--secondary-color);
-    margin-top: 1rem;
 }
 
-.form-control {
-    padding: 0.8rem 1rem;
-    border: 2px solid #e9ecef;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
-
-.form-control:focus {
-    border-color: var(--admin-accent);
-    box-shadow: 0 0 0 3px rgba(111, 66, 193, 0.2);
-}
-
-.submit-btn {
-    background-color: var(--admin-accent);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 600;
-    margin-top: 1.5rem;
-    transition: all 0.3s ease;
-    width: 100%;
-}
-
-.submit-btn:hover {
-    background-color: #5a32a8;
-    transform: translateY(-2px);
-}
-
-.registration-image {
+.welcome-image {
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    max-height: 500px;
+    transition: transform 0.3s ease;
+    max-height: 420px;
     width: auto;
-    object-fit: contain;
+    object-fit: cover;
+}
+
+.welcome-image:hover {
+    transform: scale(1.02);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
 .admin-footer {
@@ -118,12 +96,12 @@ body {
 }
 
 @media (max-width: 992px) {
-    .registration-container {
+    .welcome-section {
         padding: 2rem;
     }
     
-    .registration-image {
+    .welcome-image {
         margin-top: 2rem;
-        max-height: 400px;
+        max-height: 350px;
     }
 }

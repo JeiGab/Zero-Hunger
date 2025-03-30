@@ -1,0 +1,156 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --accent-color: #2980b9;
+    --highlight-color: #1abc9c;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-color);
+    padding-top: 70px;
+}
+
+.beneficiary-navbar {
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.beneficiary-navbar .navbar-brand {
+    color: white;
+    font-weight: 600;
+}
+
+.beneficiary-navbar .nav-link {
+    color: rgba(255,255,255,0.8);
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.beneficiary-navbar .nav-link:hover,
+.beneficiary-navbar .nav-link:focus {
+    color: white;
+    background-color: rgba(255,255,255,0.1);
+}
+
+.beneficiary-navbar .nav-link.active {
+    color: white;
+    font-weight: 500;
+    background-color: rgba(255,255,255,0.2);
+}
+
+.donations-section {
+    background: linear-gradient(135deg, rgba(52,152,219,0.1) 0%, rgba(26,188,156,0.1) 100%);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.donations-title {
+    color: var(--secondary-color);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.donations-title:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table thead th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    border: none;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.badge {
+    padding: 0.5em 0.75em;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.badge-success {
+    background-color: var(--highlight-color);
+}
+
+.badge-warning {
+    background-color: #f39c12;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background-color: var(--highlight-color);
+    border-color: var(--highlight-color);
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #16a085;
+    border-color: #16a085;
+    transform: translateY(-2px);
+}
+
+.request-form {
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    display: none;
+}
+
+.alert-info {
+    background-color: rgba(52, 152, 219, 0.1);
+    border-color: rgba(52, 152, 219, 0.3);
+    color: var(--secondary-color);
+}
+
+.beneficiary-footer {
+    background-color: var(--secondary-color);
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .table-responsive {
+        border-radius: 10px;
+        border: 1px solid #dee2e6;
+    }
+    
+    .donations-section {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+}

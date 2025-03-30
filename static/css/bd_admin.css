@@ -4,6 +4,7 @@
     --light-color: #f8f9fa;
     --dark-color: #212529;
     --admin-accent: #6f42c1;
+    --danger-color: #dc3545;
 }
 
 body {
@@ -39,22 +40,22 @@ body {
     font-weight: 500;
 }
 
-.registration-container {
+.users-container {
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    padding: 3rem;
+    padding: 2rem;
     margin: 2rem 0;
 }
 
-.registration-title {
+.users-title {
     color: var(--secondary-color);
     font-weight: 700;
     margin-bottom: 1.5rem;
     position: relative;
 }
 
-.registration-title:after {
+.users-title:after {
     content: '';
     position: absolute;
     left: 0;
@@ -65,51 +66,51 @@ body {
     border-radius: 2px;
 }
 
-.registration-form {
-    max-width: 500px;
+.table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
-.form-label {
-    font-weight: 500;
-    color: var(--secondary-color);
-    margin-top: 1rem;
-}
-
-.form-control {
-    padding: 0.8rem 1rem;
-    border: 2px solid #e9ecef;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
-
-.form-control:focus {
-    border-color: var(--admin-accent);
-    box-shadow: 0 0 0 3px rgba(111, 66, 193, 0.2);
-}
-
-.submit-btn {
-    background-color: var(--admin-accent);
+.table thead {
+    background-color: var(--secondary-color);
     color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 600;
-    margin-top: 1.5rem;
+}
+
+.table th {
+    font-weight: 500;
+    padding: 1rem;
+}
+
+.table td {
+    vertical-align: middle;
+    padding: 1rem;
+}
+
+.badge-admin {
+    background-color: var(--admin-accent);
+}
+
+.badge-donor {
+    background-color: var(--primary-color);
+}
+
+.badge-beneficiary {
+    background-color: #17a2b8;
+}
+
+.action-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+    border-radius: 6px;
     transition: all 0.3s ease;
-    width: 100%;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.submit-btn:hover {
-    background-color: #5a32a8;
+.action-btn:hover {
     transform: translateY(-2px);
-}
-
-.registration-image {
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    max-height: 500px;
-    width: auto;
-    object-fit: contain;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .admin-footer {
@@ -117,13 +118,7 @@ body {
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 }
 
-@media (max-width: 992px) {
-    .registration-container {
-        padding: 2rem;
-    }
-    
-    .registration-image {
-        margin-top: 2rem;
-        max-height: 400px;
-    }
+.alert-container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
