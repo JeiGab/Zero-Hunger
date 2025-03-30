@@ -70,6 +70,13 @@ body {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    overflow-x: auto; /* Añadido para scroll horizontal */
+    -webkit-overflow-scrolling: touch; /* Mejor desplazamiento en dispositivos móviles */
+}
+
+.table {
+    min-width: 600px; /* Asegura que la tabla tenga un ancho mínimo */
+    width: 100%;
 }
 
 .table thead {
@@ -80,11 +87,13 @@ body {
 .table th {
     font-weight: 500;
     padding: 1rem;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
 }
 
 .table td {
     vertical-align: middle;
     padding: 1rem;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
 }
 
 .badge-admin {
@@ -121,4 +130,15 @@ body {
 .alert-container {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .table-responsive {
+        border-radius: 10px;
+        border: 1px solid #dee2e6;
+    }
+    
+    .users-container {
+        padding: 1rem;
+    }
 }
