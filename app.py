@@ -243,6 +243,21 @@ def solicitar_donacion():
 
     return redirect(url_for('donaciones_disponibles'))
 
+@app.route('/admin_datos')
+@login_required
+def admin_datos():
+    aceptaciones = obtener_aceptaciones()
+    
+    # Contar total de donaciones, empresas únicas y organizaciones beneficiadas
+    total_donaciones = len(aceptaciones)
+    empresas_unicas = len(set([a[1] for a in aceptaciones])) if aceptaciones else 0
+    organizaciones_beneficiadas = len(set([a[2] for a in aceptaciones])) if aceptaciones else 0
+    
+    return render_template('admin_datos.html', 
+                         aceptaciones=aceptaciones,
+                         total_donaciones=total_donaciones,
+                         empresas_unicas=empresas_unicas,
+                         organizaciones_beneficiadas=organizaciones_beneficiadas)
 
 @app.route('/eliminar_usuario', methods=['POST'])
 @login_required
@@ -314,7 +329,6 @@ def inicio_donante():
 def inicio_benefica():
     return render_template('inicio_benefica.html')
 
-
 @app.route('/notificaciones_benefica')
 @login_required
 def notificaciones_benefica():
@@ -330,8 +344,6 @@ def donaciones():
 def bd_admin():
     lista_usuarios = obtener_usuarios()
     return render_template('bd_admin.html', usuarios=lista_usuarios)
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)

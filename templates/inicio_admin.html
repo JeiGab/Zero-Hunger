@@ -15,7 +15,7 @@
         <nav class="navbar navbar-expand-lg admin-navbar">
             <div class="container-fluid">
                 <a class="navbar-brand fs-3 fw-semibold" href="#">
-                    <i class="fas fa-shield-alt me-2"></i>Zero Hunger - Panel de Administración
+                    <i class="fas fa-shield-alt me-2"></i>Zero Hunger - Administración
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
@@ -29,12 +29,17 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('registro_admin') }}">
-                                <i class="fas fa-user-plus me-1"></i> Registrar Administradores
+                                <i class="fas fa-user-plus me-1"></i> Registrar Admins
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('bd_admin') }}">
                                 <i class="fas fa-database me-1"></i> Base de Datos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('admin_datos') }}">
+                                <i class="fas fa-chart-pie me-1"></i> Gestión de Donaciones
                             </a>
                         </li>
                     </ul>
