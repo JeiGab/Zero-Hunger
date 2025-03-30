@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login_signup.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/take-away.png') }}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/navbar.css')}}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <section>
+        <h2>Registro</h2>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <script>
+                    Swal.fire({
+                        icon: "{{ category }}" === "success" ? "success" : "error",
+                        title: "Mensaje",
+                        text: "{{ message }}",
+                    });
+                </script>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <form id="register-form" method="POST" action="/register">
+            <label>Nombre</label>
+            <input type="text" name="name" placeholder="Escribe tu nombre y apellido" id="name" required>
+
+            <label>Correo electrónico</label>
+            <input type="email" name="email" placeholder="Escribe tu correo" id="email" required>
+
+            <label>Contraseña</label>
+            <input type="password" name="password" placeholder="Escribe tu contraseña" id="password" required>
+
+            <label for="role">Rol</label>
+            <select name="role" id="role" required>
+                <option value="" disabled selected>Selecciona tu rol</option>
+                <option value="empresa donante">Empresa donante</option>
+                <option value="organizacion benefica">Organización benéfica</option>
+            </select>
+
+    
+            <div id="empresa-field" style="display: none;">
+                <input type="text" name="empresa_nombre" placeholder="Escribe el nombre de tu empresa" id="empresa_nombre">
+            </div>
+
+            <input type="submit" value="Registro">
+        </form>
+
+        <p>¿Ya tienes una cuenta? <a href="{{ url_for('login') }}">Iniciar sesión</a></p>
+    </section>
+
+    <script>
+        // Mostrar/ocultar el input de empresa según el rol seleccionado
+        const roleSelect = document.getElementById('role');
+        const empresaField = document.getElementById('empresa-field');
+
+        roleSelect.addEventListener('change', function() {
+            if (this.value === 'empresa donante') {
+                empresaField.style.display = 'block';  // Mostrar el campo si es "empresa donante"
+            } else {
+                empresaField.style.display = 'none';  // Ocultar el campo si selecciona otro rol
+            }
+        });
+    </script>
+
+    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
+</body>
+</html>

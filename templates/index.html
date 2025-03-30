@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero Hunger - Inicio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="url_for('static', filename='css/login_signup.css')">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/navbar.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/take-away.png') }}">
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="/static/images/organic.png" alt="Logo de DonacionesApp" class="navbar-logo" width="50" height="50">
+            </a>
+            
+            <div class="navbar-title mx-auto">
+            <span class="navbar-text" style="font-size: 1.58rem;">Zero Hunger - Inicio</span>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav ml-auto custom-nav-links">
+                <li class="nav-item">
+                <a class="nav-link rounded bg-success text-white px-3" href="{{ url_for('login') }}">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link rounded bg-success text-white px-3 ml-2" href="{{ url_for('register') }}">Registrarse</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Contenido Principal -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="text-center">Bienvenido a Zero Hunger</h1>
+                <p class="lead text-center">Zero Hunger facilita la conexión entre donadores y beneficiarios, garantizando que los alimentos lleguen a quienes más lo necesitan.
+                    Contribuye a reducir el desperdicio y apoya a comunidades en situación vulnerable mediante una red eficiente de donaciones.
+                </p>
+            </div>
+        </div>
+        
+        <div class="row my-4">
+            <div class="col-md-6">
+                <img src="/static/images/donacion.jpg" class="img-fluid" alt="Imagen de donaciones" width="500" height="500">
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <p class="lead">Nuestra plataforma te permite donar alimentos de manera rápida y segura. Regístrate como donador o beneficiario y empieza a contribuir hoy mismo.</p>
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-md-12">
+                <h2 class="text-center">¿Qué puedes hacer en Zero Hunger?</h2>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Donar Alimentos: Publica y gestiona donaciones fácilmente.</li>
+                    <li class="list-group-item">Solicitar Ayuda: Encuentra alimentos disponibles para comunidades y organizaciones.</li>
+                    <li class="list-group-item">Gestión Transparente: Seguimiento de donaciones y beneficiarios en tiempo real.</li>
+                    <li class="list-group-item">Impacto Social: Contribuye a reducir el desperdicio de alimentos y apoya a quienes más lo necesitan.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer class="bg-dark text-center text-lg-start mt-5 text-white">
+        <div class="container p-4">
+            <div class="d-flex justify-content-center align-items-center"></div>
+                <span class="me-3">© 2025 Zero Hunger Contactos:</span>
+                <span class="mx-3">sebastianperezr@unibarranquilla.edu.co</span>
+                <span class="ms-3">(+57) 318 307 7859</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

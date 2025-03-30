@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/login_signup.css') }}">
+    <script src="{{ url_for('static', filename='js/main.js' ) }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/take-away.png') }}">
+    <title>Login</title>
+</head>
+<body>
+    <section>
+        <h2>Login</h2>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <script>
+                    Swal.fire({
+                        icon: "{{ category }}" === "success" ? "success" : "error",
+                        title: "Mensaje",
+                        text: "{{ message }}",
+                        });
+                    </script>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form id="loginForm" action="/login" method="POST">
+            <label>Correo electrónico</label>
+            <input name="email" type="email" placeholder="Escribe tu correo" id="email" required>
+            <label>Contraseña</label>
+            <input name="password" type="password" placeholder="Escribe tu contraseña" id="password" required>
+            <input type="submit" value="Ingresar">
+        </form>
+        <p>No tienes una cuenta? <a href="{{ url_for('register') }}">Registro</a></p>
+    </section>
+
+
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>
