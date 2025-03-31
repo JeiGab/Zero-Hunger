@@ -1,4 +1,4 @@
-from flask import flash, redirect, url_for, request
+from flask import flash
 import mysql.connector as sql
 import os
 from dotenv import load_dotenv
